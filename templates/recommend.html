@@ -1,0 +1,90 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<form action="" method="post">
+    {{ form.hidden_tag() }}
+    <div>
+        {{ form.N.label }}
+        {{ form.N }}
+        {% if form.N.errors %}
+            {% for error in form.N.errors %}
+                <div>{{error}}</div>
+            {% endfor  %}
+        {% endif %}
+    </div>
+    <br> 
+    <div>
+        {{ form.P.label }}
+        {{ form.P }}
+        {% if form.P.errors %}
+            {% for error in form.P.errors %}
+                 <div>{{error}}</div>
+            {% endfor  %}
+        {% endif %}
+
+    </div>
+    <br> 
+    <div>
+        {{ form.K.label }}
+        {{ form.K }}
+        {% if form.K.errors %}
+            {% for error in form.K.errors %}
+                 <div>{{error}}</div>
+            {% endfor  %}
+        {% endif %}
+    </div>
+    <br> 
+    <div>
+        {{ form.temperature.label }}
+        {{ form.temperature }}
+        {% if form.temperature.errors %}
+            {% for error in form.temperature.errors %}
+                 <div>{{error}}</div>
+            {% endfor  %}
+        {% endif %}
+    </div>
+    <br> 
+    <div>
+        {{ form.humidity.label }}
+        {{ form.humidity }}
+        {% if form.humidity.errors %}
+            {% for error in form.humidity.errors %}
+                 <div>{{error}}</div>
+            {% endfor  %}
+        {% endif %}
+    </div>
+    <br> 
+    <div>
+        {{ form.ph.label }}
+        {{ form.ph }}
+        {% if form.ph.errors %}
+            {% for error in form.ph.errors %}
+                 <div>{{error}}</div>
+            {% endfor  %}
+        {% endif %}
+    </div>
+    <br> 
+    <div>
+        {{ form.rainfall.label }}
+        {{ form.rainfall }}
+        {% if form.rainfall.errors %}
+            {% for error in form.rainfall.errors %}
+                 <div>{{error}}</div>
+            {% endfor  %}
+        {% endif %}
+    </div>
+    <br> 
+    <div>
+        {{ form.submit() }}
+    </div>
+    <br> 
+    <div> {{output}}</div>
+    <br>
+    <div>
+        <p>Redirect to Homepage? <a href="{{ url_for('home')}}">Home</a></p>
+    </div>
+
+</form>
+
+{% endblock content %}
